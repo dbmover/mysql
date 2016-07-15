@@ -5,9 +5,7 @@ namespace Dbmover\Mysql;
 use Dbmover\Dbmover;
 use PDO;
 
-class_alias('Dbmover\Dbmover\Routines', 'Dbmover\Mysql\Routines');
-
-class Schema extends Dbmover\Schema
+class Schema extends Dbmover\Schema implements Dbmover\Regexes, Routines
 {
     use ProcedureWrapper;
     use IndexHelper;
