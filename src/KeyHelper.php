@@ -10,10 +10,10 @@ trait KeyHelper
      * @param string $column The referenced column definition.
      * @return bool
      */
-    public function isSerial(&$column)
+    public function isSerial($column)
     {
-        if (strpos($column, 'AUTO_INCREMENT') !== false) {
-            $column = str_replace('AUTO_INCREMENT', '', $column);
+        if (strpos($column->sql, 'AUTO_INCREMENT') !== false) {
+            $column->sql = str_replace('AUTO_INCREMENT', '', $column->sql);
             return true;
         }
         return false;
@@ -25,10 +25,10 @@ trait KeyHelper
      * @param string $column The referenced column definition.
      * @return bool
      */
-    public function isPrimaryKey(&$column)
+    public function isPrimaryKey($column)
     {
-        if (strpos($column, 'PRIMARY KEY')) {
-            $column = str_replace('PRIMARY KEY', '', $column);
+        if (strpos($column->sql, 'PRIMARY KEY')) {
+            $column->sql = str_replace('PRIMARY KEY', '', $column->sql);
             return true;
         }
         return false;
