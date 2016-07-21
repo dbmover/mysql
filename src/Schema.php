@@ -24,5 +24,27 @@ class Schema extends Dbmover\Schema implements Dbmover\Regexes, Routines
         parent::processSchemas();
         $this->pdo->exec("SET FOREIGN_KEY_CHECKS = 1");
     }
+
+    /**
+     * Wrap an object name for MySQL.
+     *
+     * @param string $name The name to wrap.
+     * @return string A wrapped name.
+     */
+    protected function wrapName($name)
+    {
+        return "`$name`";
+    }
+
+    /**
+     * Unwrap an object name for MySQL.
+     *
+     * @param string $name The name to unwrap.
+     * @return string An unwrapped name.
+     */
+    protected function unwrapName($name)
+    {
+        return preg_replace("@^`(.*?)`$@", '\\1', $name);
+    }
 }
 
