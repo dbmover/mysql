@@ -7,28 +7,6 @@ use PDO;
 trait TableHelper
 {
     /**
-     * MySQL-specific ALTER TABLE ... CHANGE COLUMN implementation.
-     *
-     * @param string $table The table to alter the column on.
-     * @param array $definition Hash of desired column definition.
-     * @return array An array of SQL, in this case containing a single
-     *  ALTER TABLE statement.
-     */
-    public function alterColumn($name, array $definition)
-    {
-        $sql = $this->addColumn($name, $definition);
-        $sql = str_replace(
-            ' ADD COLUMN ',
-            " CHANGE COLUMN {$definition['colname']} ",
-            $sql
-        );
-        if ($definition['is_serial']) {
-            $sql .= ' AUTO_INCREMENT';
-        }
-        return [$sql];
-    }
-
-    /**
      * MySQL-specific implementation of getTableDefinition.
      *
      * @param string $name The name of the table.
