@@ -2,6 +2,8 @@
 
 namespace Dbmover\Mysql;
 
+use Dbmover\Dbmover\Objects\Sql;
+
 trait IndexHelper
 {
     /**
@@ -32,8 +34,7 @@ trait IndexHelper
         $operations = [];
         if ($indexes = $this->getIndexes()) {
             foreach ($indexes as $index) {
-                $operations[] = "DROP INDEX {$index['idx']}
-                    ON {$index['tbl']}";
+                $operations[] = new Sql("DROP INDEX {$index['idx']} ON {$index['tbl']}");
             }
         }
         return $operations;
