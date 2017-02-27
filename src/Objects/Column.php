@@ -46,7 +46,7 @@ class Column extends Sql
         $column = new self($name, $parent);
         $column->current = (object)[];
         if (substr($match[2], 0, 5) == 'ENUM(') {
-            $column->current->type = 'ENUM('.substr($match[2], 5).')';
+            $column->current->type = 'ENUM('.substr($match[2], 5);
         } else {
             $column->current->type = strtoupper($match[2]);
         }
