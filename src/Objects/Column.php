@@ -45,7 +45,11 @@ class Column extends Sql
         $name = preg_replace('@^`(.*?)`$@', '\\1', trim($match[1]));
         $column = new self($name, $parent);
         $column->current = (object)[];
-        $column->current->type = strtoupper($match[2]);
+        if (substr($match[2], 0, 5) == 'ENUM(') {
+            $column->current->type = 'ENUM('.substr($match[2], 5).')';
+        } else {
+            $column->current->type = strtoupper($match[2]);
+        }
         if (preg_match('@(TINYINT|SMALLINT|MEDIUMINT|INT|INTEGER|BIGINT)@', $column->current->type)
             && !preg_match('@\(\d+\)$@', $column->current->type)
         ) {
