@@ -6,7 +6,7 @@ CREATE TABLE test (
     foo VARCHAR(255) DEFAULT 'buzz'
 ) ENGINE='InnoDB' DEFAULT CHARSET='UTF8';
 
-ALTER TABLE test ADD INDEX (bar);
+CREATE INDEX bar ON test(bar);
 
 CREATE TRIGGER test_before_insert BEFORE INSERT ON test
 FOR EACH ROW
