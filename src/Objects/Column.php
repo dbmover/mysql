@@ -41,8 +41,9 @@ class Column extends Sql
 
     public static function fromSql(string $sql, ObjectInterface $parent = null) : ObjectInterface
     {
-        preg_match('@^(\w+)\s+(.*?)(\s|$)@', $sql, $match);
-        $column = new self($match[1], $parent);
+        preg_match('@^(\w+)\s+(ENUM\(.*?\)|.*?)(\s|$)@', $sql, $match);
+        $name = preg_replace('@^`(.*?)`$@', '\\1', trim($match[1]));
+        $column = new self($name, $parent);
         $column->current = (object)[];
         $column->current->type = strtoupper($match[2]);
         if (preg_match('@(TINYINT|SMALLINT|MEDIUMINT|INT|INTEGER|BIGINT)@', $column->current->type)
@@ -63,7 +64,7 @@ class Column extends Sql
             $column->current->_default = $def[1];
         } elseif ($column->current->nullable) {
             $column->current->default = 'NULL';
-            $column->current->default = 'NULL';
+            $column->current->_default = 'NULL';
         }
         if (stripos($sql, 'PRIMARY KEY')) {
             $class = $parent->getObjectName('Index');
@@ -81,11 +82,11 @@ class Column extends Sql
     public function toSql() : array
     {
         if (!isset($this->requested)) {
-            return ["ALTER TABLE {$this->parent->name} DROP COLUMN {$this->name}"];
+            return ["ALTER TABLE `{$this->parent->name}` DROP COLUMN `{$this->name}`"];
         }
         if (!isset($this->current)) {
             return [sprintf(
-                "ALTER TABLE {$this->parent->name} ADD COLUMN {$this->name} {$this->requested->current->type}%s%s",
+                "ALTER TABLE `{$this->parent->name}` ADD COLUMN `{$this->name}` {$this->requested->current->type}%s%s",
                 !$this->requested->current->nullable ? ' NOT NULL' : '',
                 isset($this->requested->current->_default) ? " DEFAULT {$this->requested->current->_default}" : ''
             )];
@@ -94,7 +95,7 @@ class Column extends Sql
             return [];
         }
         return [sprintf(
-            "ALTER TABLE {$this->parent->name} CHANGE COLUMN {$this->name} {$this->name} {$this->requested->current->type}%s%s",
+            "ALTER TABLE `{$this->parent->name}` CHANGE COLUMN `{$this->name}` `{$this->name}` {$this->requested->current->type}%s%s",
             !$this->requested->current->nullable ? ' NOT NULL' : '',
             isset($this->requested->current->_default) ? " DEFAULT {$this->requested->current->_default}" : ''
         )];
