@@ -13,7 +13,6 @@ class Schema extends Dbmover\Schema implements Dbmover\Regexes, Routines
     use ColumnHelper;
 
     const CATALOG_COLUMN = 'SCHEMA';
-    const DROP_CONSTRAINT = 'FOREIGN KEY';
 
     /**
      * Process the schemas, wrapped for MySQL.
