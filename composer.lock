@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c88a3e8c45f57291f34cee6397cc1f03",
-    "content-hash": "dabc13e09820002ce44f8c2efd0d39c0",
+    "hash": "cf2f862818a1f741250627ab6a140d02",
+    "content-hash": "ea805e969cfe8c329f69e54fc32d433a",
     "packages": [
         {
             "name": "dariuszp/cli-progress-bar",
@@ -42,16 +42,16 @@
         },
         {
             "name": "dbmover/dbmover",
-            "version": "0.4.13",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/dbmover.git",
-                "reference": "08ac7ab7b5fbf3ec70a1953e812bd57f315fc3e5"
+                "reference": "0dd879a5a7332c60d476d6c3415a6dd89b81f6c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/dbmover/zipball/08ac7ab7b5fbf3ec70a1953e812bd57f315fc3e5",
-                "reference": "08ac7ab7b5fbf3ec70a1953e812bd57f315fc3e5",
+                "url": "https://api.github.com/repos/dbmover/dbmover/zipball/0dd879a5a7332c60d476d6c3415a6dd89b81f6c2",
+                "reference": "0dd879a5a7332c60d476d6c3415a6dd89b81f6c2",
                 "shasum": ""
             },
             "require": {
@@ -81,7 +81,7 @@
                 }
             ],
             "description": "PHP-based database versioning tool",
-            "time": "2016-11-07 11:42:17"
+            "time": "2017-02-27 11:15:03"
         },
         {
             "name": "monomelodies/kingconf",
