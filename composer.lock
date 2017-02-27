@@ -42,16 +42,16 @@
         },
         {
             "name": "dbmover/dbmover",
-            "version": "0.4.0",
+            "version": "0.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/dbmover.git",
-                "reference": "c48443e34ce4563b7b30ab75701676848459ffb7"
+                "reference": "08ac7ab7b5fbf3ec70a1953e812bd57f315fc3e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/dbmover/zipball/c48443e34ce4563b7b30ab75701676848459ffb7",
-                "reference": "c48443e34ce4563b7b30ab75701676848459ffb7",
+                "url": "https://api.github.com/repos/dbmover/dbmover/zipball/08ac7ab7b5fbf3ec70a1953e812bd57f315fc3e5",
+                "reference": "08ac7ab7b5fbf3ec70a1953e812bd57f315fc3e5",
                 "shasum": ""
             },
             "require": {
@@ -81,7 +81,7 @@
                 }
             ],
             "description": "PHP-based database versioning tool",
-            "time": "2016-07-15 10:31:55"
+            "time": "2016-11-07 11:42:17"
         },
         {
             "name": "monomelodies/kingconf",
@@ -135,25 +135,31 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "2884c26ce4c1d61aebf423a8b912950fe7c764de"
+                "reference": "9724c684646fcb5387d579b4bfaa63ee0b0c64c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/2884c26ce4c1d61aebf423a8b912950fe7c764de",
-                "reference": "2884c26ce4c1d61aebf423a8b912950fe7c764de",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/9724c684646fcb5387d579b4bfaa63ee0b0c64c8",
+                "reference": "9724c684646fcb5387d579b4bfaa63ee0b0c64c8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
             },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -180,22 +186,22 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-29 05:41:56"
+            "time": "2017-02-16 22:46:52"
         }
     ],
     "packages-dev": [
         {
             "name": "gentry/gentry",
-            "version": "0.10.2",
+            "version": "0.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gentry-php/gentry.git",
-                "reference": "096849915d0e7957f61470829df6961709afc2d3"
+                "reference": "4e97d4d754b3d6624a3a3d24c63d5c80ad9d0726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gentry-php/gentry/zipball/096849915d0e7957f61470829df6961709afc2d3",
-                "reference": "096849915d0e7957f61470829df6961709afc2d3",
+                "url": "https://api.github.com/repos/gentry-php/gentry/zipball/4e97d4d754b3d6624a3a3d24c63d5c80ad9d0726",
+                "reference": "4e97d4d754b3d6624a3a3d24c63d5c80ad9d0726",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +230,7 @@
                 }
             ],
             "description": "PHP unit test generation tools",
-            "time": "2016-07-15 06:45:41"
+            "time": "2016-10-09 14:45:24"
         },
         {
             "name": "simoneast/simple-ansi-colors",
