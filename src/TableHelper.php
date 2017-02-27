@@ -14,7 +14,7 @@ trait TableHelper
      */
     public function getTableDefinition($name)
     {
-        $stmt = $this->pdo->prepare(sprintf(
+        $stmt = $this->pdo->prepare(
             "SELECT
                 COLUMN_NAME colname,
                 COLUMN_DEFAULT def,
@@ -22,11 +22,10 @@ trait TableHelper
                 DATA_TYPE coltype,
                 (EXTRA = 'auto_increment') is_serial
             FROM INFORMATION_SCHEMA.COLUMNS
-                WHERE TABLE_%s = ? AND TABLE_NAME = ?
-                ORDER BY ORDINAL_POSITION ASC",
-            static::CATALOG_COLUMN
-        ));
-        $stmt->execute([$this->database, $name]);
+                WHERE (TABLE_CATALOG = ? OR TABLE_SCHEMA = ?) AND TABLE_NAME = ?
+                ORDER BY ORDINAL_POSITION ASC"
+        );
+        $stmt->execute([$this->database, $this->database, $name]);
         $cols = [];
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $column) {
             if (is_null($column['def']) && $column['nullable'] == 'YES') {
