@@ -28,6 +28,7 @@ CREATE TABLE test (
 DROP VIEW IF EXISTS viewtest;
 EOT
         );
+        putenv("DBMOVER_VENDOR=Mysql");
     }
 
     /**
