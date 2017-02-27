@@ -60,7 +60,6 @@ class Index extends Sql
         if ($this->equals($this->current, $this->requested->current)) {
             return [];
         }
-        var_dump($this->current, $this->requested->current);
         $operations = [];
         if ($this->current) {
             $operations[] = "DROP INDEX {$this->name} ON {$this->parent->name}";
