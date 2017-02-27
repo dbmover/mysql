@@ -7,12 +7,7 @@ use PDO;
 
 class Schema extends Dbmover\Schema implements Dbmover\Regexes, Routines
 {
-    use ProcedureWrapper;
-    use IndexHelper;
-    use TableHelper;
-    use ColumnHelper;
-
-    const CATALOG_COLUMN = 'SCHEMA';
+    use Helper\Procedure;
 
     /**
      * Process the schemas, wrapped for MySQL.
