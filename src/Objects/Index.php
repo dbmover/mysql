@@ -55,14 +55,22 @@ class Index extends Sql
     public function toSql() : array
     {
         if (!isset($this->requested)) {
-            return ["DROP INDEX {$this->name} ON {$this->parent->name}"];
+            if ($this->current->isPrimaryKey) {
+                return ["ALTER TABLE `{$this->parent->name}` DROP PRIMARY KEY"];
+            } else {
+                return ["DROP INDEX `{$this->name}` ON {$this->parent->name}"];
+            }
         }
         if ($this->equals($this->current, $this->requested->current)) {
             return [];
         }
         $operations = [];
         if ($this->current) {
-            $operations[] = "DROP INDEX {$this->name} ON {$this->parent->name}";
+            if ($this->current->isPrimaryKey) {
+                $operations[] = "ALTER TABLE `{$this->parent->name}` DROP PRIMARY KEY";
+            } else {
+                $operations[] = "DROP INDEX `{$this->name}` ON {$this->parent->name}";
+            }
         }
         $operations[] = sprintf(
             "CREATE %s INDEX %s ON %s (%s)",
@@ -76,19 +84,27 @@ class Index extends Sql
 
     public static function fromSql(string $sql, ObjectInterface $parent = null) : ObjectInterface
     {
-        preg_match("@^CREATE\s+(UNIQUE\s+)?INDEX\s+(\w+)?\s*ON\s+(\w+)\s*\((.*?)\);@", $sql, $matches);
-        if (!$matches[2]) {
-            $matches[2] = preg_replace('@,\s*@', '_', $matches[4]).'_idx';
+        if (preg_match("@^CREATE\s+(UNIQUE\s+)?INDEX\s+(`?\w+`?)?\s*ON\s+(\w+)\s*\((.*?)\);@", $sql, $matches)) {
+            if (!$matches[2]) {
+                $matches[2] = preg_replace('@,\s*@', '_', $matches[4]).'_idx';
+            }
+            $name = preg_replace('@^`(.*?)`$@', '\\1', trim($matches[2]));
+            $index = new self($name, $parent);
+            $index->current = (object)['isPrimaryKey' => false];
+            $index->current->columns = preg_split("@,\s*@", $matches[4]);
+            $index->table = $matches[3];
+        } else {
+            preg_match("@^ALTER TABLE\s+(\w+?)\s+ADD PRIMARY KEY\((.*?)\)@", $sql, $matches);
+            $index = new self('PRIMARY', $parent);
+            $index->current = (object)['isPrimaryKey' => true];
+            $index->current->columns = preg_split("@,\s*@", $matches[2]);
+            $index->table = $matches[1];
         }
-        $index = new self($matches[2], $parent);
-        $index->current = (object)['isPrimaryKey' => false];
         if ($matches[1]) {
             $index->current->isUnique = true;
         } else {
             $index->current->isUnique = false;
         }
-        $index->current->columns = preg_split("@,\s*@", $matches[4]);
-        $index->table = $matches[3];
         return $index;
     }
 }
