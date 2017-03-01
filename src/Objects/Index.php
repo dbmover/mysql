@@ -83,13 +83,17 @@ class Index extends Sql
                 $operations[] = "DROP INDEX `{$this->name}` ON {$this->parent->name}";
             }
         }
-        $operations[] = sprintf(
-            "CREATE %s INDEX %s ON %s (%s)",
-            $this->requested->current->isUnique ? 'UNIQUE' : '',
-            $this->name,
-            $this->parent->name,
-            implode(', ', $this->requested->current->columns)
-        );
+        if ($this->requested->current->isSerial) {
+            $operations[] = "ALTER TABLE {$this->parent->name} MODIFY {$this->current->columns[0]} AUTO_INCREMENT";
+        } else {
+            $operations[] = sprintf(
+                "CREATE %s INDEX %s ON %s (%s)",
+                $this->requested->current->isUnique ? 'UNIQUE' : '',
+                $this->name,
+                $this->parent->name,
+                implode(', ', $this->requested->current->columns)
+            );
+        }
         return $operations;
     }
 
@@ -101,20 +105,24 @@ class Index extends Sql
             }
             $name = preg_replace('@^`(.*?)`$@', '\\1', trim($matches[2]));
             $index = new self($name, $parent);
-            $index->current = (object)['isPrimaryKey' => false];
+            $index->current = (object)['isPrimaryKey' => false, 'isSerial' => false];
             $index->current->columns = preg_split("@,\s*@", $matches[4]);
             $index->table = $matches[3];
-        } else {
-            preg_match("@^ALTER TABLE\s+(\w+?)\s+ADD PRIMARY KEY\((.*?)\)@", $sql, $matches);
+            if ($matches[1]) {
+                $index->current->isUnique = true;
+            } else {
+                $index->current->isUnique = false;
+            }
+        } elseif (preg_match("@^ALTER TABLE\s+(\w+?)\s+ADD PRIMARY KEY\((.*?)\)@", $sql, $matches)) {
             $index = new self('PRIMARY', $parent);
-            $index->current = (object)['isPrimaryKey' => true];
+            $index->current = (object)['isPrimaryKey' => true, 'isUnique' => false, 'isSerial' => false];
             $index->current->columns = preg_split("@,\s*@", $matches[2]);
             $index->table = $matches[1];
-        }
-        if ($matches[1]) {
-            $index->current->isUnique = true;
-        } else {
-            $index->current->isUnique = false;
+        } elseif (preg_match('@^(`.*?`|\w+)\s.*?AUTO_INCREMENT@', $sql, $matches)) {
+            $index = new self('PRIMARY', $parent);
+            $index->current = (object)['isPrimaryKey' => true, 'isUnique' => false, 'isSerial' => true];
+            $index->current->columns = preg_split("@,\s*@", $matches[1]);
+            $index->table = $parent->name;
         }
         return $index;
     }
