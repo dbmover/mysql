@@ -76,6 +76,7 @@ class Column extends Sql
             $index->current = (object)[
                 'isPrimaryKey' => true,
                 'isUnique' => false,
+                'isSerial' => stripos($sql, 'AUTO_INCREMENT') !== false,
                 'columns' => [$match[1]],
             ];
             $parent->current->indexes['PRIMARY'] = $index;
