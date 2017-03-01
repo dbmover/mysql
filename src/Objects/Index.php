@@ -15,6 +15,7 @@ class Index extends Sql
     public $parent;
     protected static $define;
     protected static $constraints;
+    protected static $serial;
     public $current;
     public $requested;
 
@@ -35,10 +36,14 @@ class Index extends Sql
                 "SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE
                     CONSTRAINT_SCHEMA = ? AND TABLE_NAME = ? AND CONSTRAINT_NAME = ?"
             );
+            self::$serial = $pdo->prepare(
+                "SELECT EXTRA FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? AND COLUMN_NAME = ?"
+            );
         }
         self::$define->execute([$database, $this->parent->name, $this->name]);
         $this->current = (object)[];
         $this->current->isPrimaryKey = $this->name == 'PRIMARY';
+        $this->current->isSerial = false;
         $this->current->isUnique = false;
         $this->current->columns = [];
         foreach (self::$define->fetchAll(PDO::FETCH_ASSOC) as $column) {
@@ -48,6 +53,12 @@ class Index extends Sql
             self::$constraints->execute([$database, $this->parent->name, $this->name]);
             if (self::$constraints->fetch()) {
                 $this->current->isUnique = true;
+            }
+        } else {
+            if (count($this->current->columns) == 1) {
+                self::$serial->execute([$database, $this->parent->name, $this->name]);
+                $type = self::$serial->fetchColumn();
+                $this->current->isSerial = strpos($type, 'auto_increment') !== false;
             }
         }
     }
