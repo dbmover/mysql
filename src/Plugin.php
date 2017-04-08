@@ -13,6 +13,8 @@ use Dbmover\Core;
 use Dbmover\HoistDrop;
 use Dbmover\Views;
 use Dbmover\Constraints;
+use Dbmover\Tables;
+use Dbmover\Conditionals;
 
 class Plugin extends Core\Plugin
 {
@@ -24,7 +26,9 @@ class Plugin extends Core\Plugin
             Views\Plugin::class,
             Procedures::class,
             Constraints\Plugin::class,
-            Indexes\Plugin::class
+            Indexes\Plugin::class,
+            Tables\Plugin::class,
+            Triggers\Plugin::class
         );
     }
 }
