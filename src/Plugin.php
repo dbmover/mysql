@@ -10,7 +10,6 @@
 namespace Dbmover\Mysql;
 
 use Dbmover\Core;
-use Dbmover\HoistDrop;
 use Dbmover\Views;
 use Dbmover\Constraints;
 use Dbmover\Tables;
