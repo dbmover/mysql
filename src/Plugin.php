@@ -11,9 +11,6 @@ namespace Dbmover\Mysql;
 
 use Dbmover\Core;
 use Dbmover\Views;
-use Dbmover\Constraints;
-use Dbmover\Tables;
-use Dbmover\Conditionals;
 
 class Plugin extends Core\Plugin
 {
@@ -24,10 +21,10 @@ class Plugin extends Core\Plugin
             Conditionals\Plugin::class,
             Views\Plugin::class,
             Procedures::class,
-            Constraints\Plugin::class,
             Indexes\Plugin::class,
-            Tables\Plugin::class,
-            Triggers\Plugin::class
+            Constraints\Plugin::class,
+            Triggers\Plugin::class,
+            Tables\Plugin::class
         );
     }
 }
