@@ -4,85 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d086cba62e46750732f64db69262ecd6",
-    "content-hash": "0ac43a99e372288b09df32d2b05e82d4",
+    "hash": "32ea4326703d4d946aae3dd5d9555d2a",
+    "content-hash": "baa527bba99ed504dc339f231ed2ffbf",
     "packages": [
         {
-            "name": "dariuszp/cli-progress-bar",
-            "version": "1.0.2",
+            "name": "dbmover/constraints",
+            "version": "0.6.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dariuszp/cli-progress-bar.git",
-                "reference": "54020a8fc60bf19579bfe0317f17a2848d48991d"
+                "url": "https://github.com/dbmover/constraints.git",
+                "reference": "58d28f795da96cbd2a7958483c4bfe20e8df9c8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dariuszp/cli-progress-bar/zipball/54020a8fc60bf19579bfe0317f17a2848d48991d",
-                "reference": "54020a8fc60bf19579bfe0317f17a2848d48991d",
+                "url": "https://api.github.com/repos/dbmover/constraints/zipball/58d28f795da96cbd2a7958483c4bfe20e8df9c8c",
+                "reference": "58d28f795da96cbd2a7958483c4bfe20e8df9c8c",
                 "shasum": ""
+            },
+            "require": {
+                "dbmover/core": "^0.6.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Dariuszp\\": "src/Dariuszp"
+                    "Dbmover\\Constraints\\": "./src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dariusz Półtorak",
-                    "email": "poltorak.dariusz@gmail.com"
-                }
-            ],
-            "description": "Cli progress bar",
-            "time": "2015-11-02 14:38:59"
-        },
-        {
-            "name": "dbmover/conditionals",
-            "version": "0.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/conditionals.git",
-                "reference": "da9df156386b8d1b03c2ecc62d78103a94e5fdf9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/conditionals/zipball/da9df156386b8d1b03c2ecc62d78103a94e5fdf9",
-                "reference": "da9df156386b8d1b03c2ecc62d78103a94e5fdf9",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin to hoist conditional statements",
-            "time": "2017-04-08 14:57:18"
-        },
-        {
-            "name": "dbmover/constraints",
-            "version": "0.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/constraints.git",
-                "reference": "bbbff4ebb886206dd01c9387c3f06bff97774a43"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/constraints/zipball/bbbff4ebb886206dd01c9387c3f06bff97774a43",
-                "reference": "bbbff4ebb886206dd01c9387c3f06bff97774a43",
-                "shasum": ""
-            },
-            "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -94,24 +41,23 @@
                 }
             ],
             "description": "Dbmover plugin for dropping all constraints prior to operations",
-            "time": "2017-04-08 14:56:39"
+            "time": "2017-04-15 15:57:11"
         },
         {
             "name": "dbmover/core",
-            "version": "0.6.0",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/core.git",
-                "reference": "f7e9972b9779456fb113ad30fb12a55d1688fcbb"
+                "reference": "696fe3323ccb3b70d676076c61d7d99cc780cd94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/core/zipball/f7e9972b9779456fb113ad30fb12a55d1688fcbb",
-                "reference": "f7e9972b9779456fb113ad30fb12a55d1688fcbb",
+                "url": "https://api.github.com/repos/dbmover/core/zipball/696fe3323ccb3b70d676076c61d7d99cc780cd94",
+                "reference": "696fe3323ccb3b70d676076c61d7d99cc780cd94",
                 "shasum": ""
             },
             "require": {
-                "dariuszp/cli-progress-bar": "^1.0",
                 "monomelodies/kingconf": "^1.1"
             },
             "require-dev": {
@@ -137,7 +83,7 @@
                 }
             ],
             "description": "PHP-based database versioning tool, core components",
-            "time": "2017-04-08 14:58:17"
+            "time": "2017-04-15 15:28:11"
         },
         {
             "name": "dbmover/mysql-indexes",
@@ -225,19 +171,27 @@
         },
         {
             "name": "dbmover/tables",
-            "version": "0.6.0",
+            "version": "0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/tables.git",
-                "reference": "3a3b727879c7469a7dddbb965cbbedfdb2a41a5d"
+                "reference": "af81f08078fe32719f2861c7003005ebb9c6e97d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/tables/zipball/3a3b727879c7469a7dddbb965cbbedfdb2a41a5d",
-                "reference": "3a3b727879c7469a7dddbb965cbbedfdb2a41a5d",
+                "url": "https://api.github.com/repos/dbmover/tables/zipball/af81f08078fe32719f2861c7003005ebb9c6e97d",
+                "reference": "af81f08078fe32719f2861c7003005ebb9c6e97d",
                 "shasum": ""
             },
+            "require": {
+                "dbmover/core": "^0.6.0"
+            },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dbmover\\Tables\\": "./src"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -249,23 +203,31 @@
                 }
             ],
             "description": "Dbmover plugin to migrate table definitions",
-            "time": "2017-04-08 15:20:10"
+            "time": "2017-04-15 11:20:56"
         },
         {
             "name": "dbmover/views",
-            "version": "0.6.0",
+            "version": "0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/views.git",
-                "reference": "e21d9e07fce41e04b79f9eb0e32679b45b323ba1"
+                "reference": "80c0d3ceb50e5b8996245145f2a6176c17a4a672"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/views/zipball/e21d9e07fce41e04b79f9eb0e32679b45b323ba1",
-                "reference": "e21d9e07fce41e04b79f9eb0e32679b45b323ba1",
+                "url": "https://api.github.com/repos/dbmover/views/zipball/80c0d3ceb50e5b8996245145f2a6176c17a4a672",
+                "reference": "80c0d3ceb50e5b8996245145f2a6176c17a4a672",
                 "shasum": ""
             },
+            "require": {
+                "dbmover/core": "^0.6.1"
+            },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dbmover\\Views\\": "./src"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -277,7 +239,7 @@
                 }
             ],
             "description": "Dbmover plugin to (re)create all views",
-            "time": "2017-04-08 15:21:31"
+            "time": "2017-04-15 15:50:23"
         },
         {
             "name": "monomelodies/kingconf",
