@@ -12,7 +12,6 @@
     "require": {
         "dbmover/core": "^0.6.0",
         "dbmover/views": "^0.6.0",
-        "dbmover/conditionals": "^0.6.0",
         "dbmover/constraints": "^0.6.0",
         "dbmover/mysql-procedures": "^0.6.0",
         "dbmover/mysql-indexes": "^0.6.0",
