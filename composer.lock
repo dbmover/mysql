@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4aaf74aad4a60e3613456b11c3138196",
-    "content-hash": "c6eed72c8fc96eb9a289f53ccb79f4fc",
+    "hash": "bc4eed9734bb97238ee39c692106192c",
+    "content-hash": "fd15482d58da8c742403f13ce8c1485d",
     "packages": [
         {
             "name": "dbmover/constraints",
@@ -120,6 +120,42 @@
             ],
             "description": "Dbmover plugin to migrate indexes",
             "time": "2017-04-15 06:15:38"
+        },
+        {
+            "name": "dbmover/mysql-constraints",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbmover/mysql-constraints.git",
+                "reference": "935026c5319424d885a8fe8db2fa2bb3fab601cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbmover/mysql-constraints/zipball/935026c5319424d885a8fe8db2fa2bb3fab601cb",
+                "reference": "935026c5319424d885a8fe8db2fa2bb3fab601cb",
+                "shasum": ""
+            },
+            "require": {
+                "dbmover/constraints": "^0.6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dbmover\\Mysql\\Constraints\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Ophorst",
+                    "email": "marijn@monomelodies.nl"
+                }
+            ],
+            "description": "Dbmover plugin for (re)creating MySQL constraints",
+            "time": "2017-04-16 07:07:23"
         },
         {
             "name": "dbmover/mysql-indexes",
