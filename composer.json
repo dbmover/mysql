@@ -15,7 +15,7 @@
         "dbmover/mysql-constraints": "^0.1.0",
         "dbmover/mysql-procedures": "^0.6.0",
         "dbmover/mysql-indexes": "^0.6.0",
-        "dbmover/mysql-tables": "^0.1.0",
+        "dbmover/mysql-tables": "^0.2.0",
         "dbmover/mysql-triggers": "^0.6.0"
     },
     "require-dev": {
