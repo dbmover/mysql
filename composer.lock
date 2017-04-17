@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc4eed9734bb97238ee39c692106192c",
-    "content-hash": "fd15482d58da8c742403f13ce8c1485d",
+    "hash": "ba394724dbfc17ca58ee4604c58c1bc3",
+    "content-hash": "a2fc77732a4123dd5895c86aad1b1596",
     "packages": [
         {
             "name": "dbmover/constraints",
@@ -45,16 +45,16 @@
         },
         {
             "name": "dbmover/core",
-            "version": "0.6.2",
+            "version": "0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/core.git",
-                "reference": "696fe3323ccb3b70d676076c61d7d99cc780cd94"
+                "reference": "25243cd98db75d0b18b3507a0764a1038e62ae6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/core/zipball/696fe3323ccb3b70d676076c61d7d99cc780cd94",
-                "reference": "696fe3323ccb3b70d676076c61d7d99cc780cd94",
+                "url": "https://api.github.com/repos/dbmover/core/zipball/25243cd98db75d0b18b3507a0764a1038e62ae6d",
+                "reference": "25243cd98db75d0b18b3507a0764a1038e62ae6d",
                 "shasum": ""
             },
             "require": {
@@ -83,20 +83,20 @@
                 }
             ],
             "description": "PHP-based database versioning tool, core components",
-            "time": "2017-04-15 15:28:11"
+            "time": "2017-04-16 12:36:02"
         },
         {
             "name": "dbmover/indexes",
-            "version": "0.6.0",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/indexes.git",
-                "reference": "f982ddeeef62bff5ad4857c436cf5608f6d0fb16"
+                "reference": "cb5fcf2598f3b3f1736a53f2a72e73a13add7d83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/indexes/zipball/f982ddeeef62bff5ad4857c436cf5608f6d0fb16",
-                "reference": "f982ddeeef62bff5ad4857c436cf5608f6d0fb16",
+                "url": "https://api.github.com/repos/dbmover/indexes/zipball/cb5fcf2598f3b3f1736a53f2a72e73a13add7d83",
+                "reference": "cb5fcf2598f3b3f1736a53f2a72e73a13add7d83",
                 "shasum": ""
             },
             "require": {
@@ -119,20 +119,20 @@
                 }
             ],
             "description": "Dbmover plugin to migrate indexes",
-            "time": "2017-04-15 06:15:38"
+            "time": "2017-04-17 06:21:37"
         },
         {
             "name": "dbmover/mysql-constraints",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/mysql-constraints.git",
-                "reference": "935026c5319424d885a8fe8db2fa2bb3fab601cb"
+                "reference": "be9f8280c2bb21c80c683bcaa6c696b646d0d354"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-constraints/zipball/935026c5319424d885a8fe8db2fa2bb3fab601cb",
-                "reference": "935026c5319424d885a8fe8db2fa2bb3fab601cb",
+                "url": "https://api.github.com/repos/dbmover/mysql-constraints/zipball/be9f8280c2bb21c80c683bcaa6c696b646d0d354",
+                "reference": "be9f8280c2bb21c80c683bcaa6c696b646d0d354",
                 "shasum": ""
             },
             "require": {
@@ -155,20 +155,20 @@
                 }
             ],
             "description": "Dbmover plugin for (re)creating MySQL constraints",
-            "time": "2017-04-16 07:07:23"
+            "time": "2017-04-17 06:23:58"
         },
         {
             "name": "dbmover/mysql-indexes",
-            "version": "0.6.2",
+            "version": "0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/mysql-indexes.git",
-                "reference": "b510c8654cba569f486bc0588bfc1a90fe032016"
+                "reference": "4d13e6160d87c85a7da4a99e000d88a57dd90135"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-indexes/zipball/b510c8654cba569f486bc0588bfc1a90fe032016",
-                "reference": "b510c8654cba569f486bc0588bfc1a90fe032016",
+                "url": "https://api.github.com/repos/dbmover/mysql-indexes/zipball/4d13e6160d87c85a7da4a99e000d88a57dd90135",
+                "reference": "4d13e6160d87c85a7da4a99e000d88a57dd90135",
                 "shasum": ""
             },
             "require": {
@@ -191,7 +191,7 @@
                 }
             ],
             "description": "Dbmover support for MySQL-style inline indexes",
-            "time": "2017-04-16 07:00:05"
+            "time": "2017-04-17 06:25:48"
         },
         {
             "name": "dbmover/mysql-procedures",
@@ -231,19 +231,27 @@
         },
         {
             "name": "dbmover/mysql-tables",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/mysql-tables.git",
-                "reference": "b50422ce2b2cd0ae780ed068ba19f8b38594cbfb"
+                "reference": "cf8f0aa9ffc6807c6aee65da9270eec082868429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-tables/zipball/b50422ce2b2cd0ae780ed068ba19f8b38594cbfb",
-                "reference": "b50422ce2b2cd0ae780ed068ba19f8b38594cbfb",
+                "url": "https://api.github.com/repos/dbmover/mysql-tables/zipball/cf8f0aa9ffc6807c6aee65da9270eec082868429",
+                "reference": "cf8f0aa9ffc6807c6aee65da9270eec082868429",
                 "shasum": ""
             },
+            "require": {
+                "dbmover/tables": "^0.6.3"
+            },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dbmover\\Mysql\\Tables\\": "./src"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -255,23 +263,31 @@
                 }
             ],
             "description": "Dbmover plugin to modify existing tables in MySQL",
-            "time": "2017-04-15 16:48:42"
+            "time": "2017-04-17 06:27:34"
         },
         {
             "name": "dbmover/mysql-triggers",
-            "version": "0.6.1",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/mysql-triggers.git",
-                "reference": "7e99f0ff4a9f84f3cd5c972ff9e49e59a405f095"
+                "reference": "e35678c6db4553f04d97071ebce4d1156b86489a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-triggers/zipball/7e99f0ff4a9f84f3cd5c972ff9e49e59a405f095",
-                "reference": "7e99f0ff4a9f84f3cd5c972ff9e49e59a405f095",
+                "url": "https://api.github.com/repos/dbmover/mysql-triggers/zipball/e35678c6db4553f04d97071ebce4d1156b86489a",
+                "reference": "e35678c6db4553f04d97071ebce4d1156b86489a",
                 "shasum": ""
             },
+            "require": {
+                "dbmover/core": "^0.6.2"
+            },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dbmover\\Mysql\\Triggers\\": "./src"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -283,7 +299,7 @@
                 }
             ],
             "description": "Dbmover plugin for MySQL-specific trigger (re)creation",
-            "time": "2017-04-15 16:56:31"
+            "time": "2017-04-16 07:15:16"
         },
         {
             "name": "dbmover/procedures",
@@ -320,6 +336,42 @@
             ],
             "description": "Dbmover plugin to (re)create procedures",
             "time": "2017-04-16 06:36:30"
+        },
+        {
+            "name": "dbmover/tables",
+            "version": "0.6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbmover/tables.git",
+                "reference": "dce8903bef9465ef3e5d9a724b958c4eb376ccb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbmover/tables/zipball/dce8903bef9465ef3e5d9a724b958c4eb376ccb7",
+                "reference": "dce8903bef9465ef3e5d9a724b958c4eb376ccb7",
+                "shasum": ""
+            },
+            "require": {
+                "dbmover/core": "^0.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dbmover\\Tables\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Ophorst",
+                    "email": "marijn@monomelodies.nl"
+                }
+            ],
+            "description": "Dbmover plugin to migrate table definitions",
+            "time": "2017-04-17 06:39:01"
         },
         {
             "name": "dbmover/views",
