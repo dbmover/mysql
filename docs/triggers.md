@@ -1,15 +1,5 @@
-# Dbmover\MysqlTriggers
+# Triggers
 MySQL-specific DbMover plugin to drop and recreate all triggers.
-
-## Installation
-```sh
-composer require dbmover/mysql-triggers
-```
-
-    This package is part of the `dbmover/mysql` meta-package.
-
-## Usage
-See `dbmover/core`.
 
 ## Caveats
 Like with procedures, there is no need to explicitly add delimiters in your
@@ -22,7 +12,4 @@ BEGIN
     -- SQL...
 END;
 ```
-
-## Contributing
-See `dbmover/core`.
 
