@@ -21,3 +21,8 @@ The MySQL plugins fully support the use of escaped object names (e.g.
 official recommendation is to avoid reserved words or other illegal characters
 in object names if at all possible.
 
+## TODO/wishlist
+
+### Support collation/storage engine changes in `Tables` plugin
+A relatively rare operation, but it should be supported I feel.
+
