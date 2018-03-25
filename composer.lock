@@ -4,64 +4,31 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ba394724dbfc17ca58ee4604c58c1bc3",
-    "content-hash": "a2fc77732a4123dd5895c86aad1b1596",
+    "hash": "332d48eb1357aa1c3df2e8e23c5ca714",
+    "content-hash": "088274b133079c895f58e2a81ccc3258",
     "packages": [
         {
-            "name": "dbmover/constraints",
-            "version": "0.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/constraints.git",
-                "reference": "58d28f795da96cbd2a7958483c4bfe20e8df9c8c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/constraints/zipball/58d28f795da96cbd2a7958483c4bfe20e8df9c8c",
-                "reference": "58d28f795da96cbd2a7958483c4bfe20e8df9c8c",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/core": "^0.6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Constraints\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin for dropping all constraints prior to operations",
-            "time": "2017-04-15 15:57:11"
-        },
-        {
             "name": "dbmover/core",
-            "version": "0.6.3",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/core.git",
-                "reference": "25243cd98db75d0b18b3507a0764a1038e62ae6d"
+                "reference": "1708ba608eef964adacd79b3546634ed81245bd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/core/zipball/25243cd98db75d0b18b3507a0764a1038e62ae6d",
-                "reference": "25243cd98db75d0b18b3507a0764a1038e62ae6d",
+                "url": "https://api.github.com/repos/dbmover/core/zipball/1708ba608eef964adacd79b3546634ed81245bd0",
+                "reference": "1708ba608eef964adacd79b3546634ed81245bd0",
                 "shasum": ""
             },
             "require": {
-                "monomelodies/kingconf": "^1.1"
+                "monomelodies/kingconf": "^1.1",
+                "php": ">=7.2"
             },
             "require-dev": {
-                "gentry/gentry": "^0.10.2"
+                "gentry/gentry": "^0.13.0",
+                "gentry/toast": "^0.1.0",
+                "toast/unit": "^1.3"
             },
             "bin": [
                 "bin/dbmover"
@@ -83,344 +50,20 @@
                 }
             ],
             "description": "PHP-based database versioning tool, core components",
-            "time": "2017-04-16 12:36:02"
-        },
-        {
-            "name": "dbmover/indexes",
-            "version": "0.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/indexes.git",
-                "reference": "cb5fcf2598f3b3f1736a53f2a72e73a13add7d83"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/indexes/zipball/cb5fcf2598f3b3f1736a53f2a72e73a13add7d83",
-                "reference": "cb5fcf2598f3b3f1736a53f2a72e73a13add7d83",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/core": "^0.6.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Indexes\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin to migrate indexes",
-            "time": "2017-04-17 06:21:37"
-        },
-        {
-            "name": "dbmover/mysql-constraints",
-            "version": "0.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/mysql-constraints.git",
-                "reference": "be9f8280c2bb21c80c683bcaa6c696b646d0d354"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-constraints/zipball/be9f8280c2bb21c80c683bcaa6c696b646d0d354",
-                "reference": "be9f8280c2bb21c80c683bcaa6c696b646d0d354",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/constraints": "^0.6.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Mysql\\Constraints\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin for (re)creating MySQL constraints",
-            "time": "2017-04-17 06:23:58"
-        },
-        {
-            "name": "dbmover/mysql-indexes",
-            "version": "0.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/mysql-indexes.git",
-                "reference": "4d13e6160d87c85a7da4a99e000d88a57dd90135"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-indexes/zipball/4d13e6160d87c85a7da4a99e000d88a57dd90135",
-                "reference": "4d13e6160d87c85a7da4a99e000d88a57dd90135",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/indexes": "^0.6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Mysql\\Indexes\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover support for MySQL-style inline indexes",
-            "time": "2017-04-17 06:25:48"
-        },
-        {
-            "name": "dbmover/mysql-procedures",
-            "version": "0.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/mysql-procedures.git",
-                "reference": "9c4ac13f292aa9ab13d3b41b48abd36b33b40d47"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-procedures/zipball/9c4ac13f292aa9ab13d3b41b48abd36b33b40d47",
-                "reference": "9c4ac13f292aa9ab13d3b41b48abd36b33b40d47",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/procedures": "^0.6.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Mysql\\Procedures\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover MySQL-specific procedure plugin overrides",
-            "time": "2017-04-16 06:54:58"
-        },
-        {
-            "name": "dbmover/mysql-tables",
-            "version": "0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/mysql-tables.git",
-                "reference": "cf8f0aa9ffc6807c6aee65da9270eec082868429"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-tables/zipball/cf8f0aa9ffc6807c6aee65da9270eec082868429",
-                "reference": "cf8f0aa9ffc6807c6aee65da9270eec082868429",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/tables": "^0.6.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Mysql\\Tables\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin to modify existing tables in MySQL",
-            "time": "2017-04-17 06:27:34"
-        },
-        {
-            "name": "dbmover/mysql-triggers",
-            "version": "0.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/mysql-triggers.git",
-                "reference": "e35678c6db4553f04d97071ebce4d1156b86489a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/mysql-triggers/zipball/e35678c6db4553f04d97071ebce4d1156b86489a",
-                "reference": "e35678c6db4553f04d97071ebce4d1156b86489a",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/core": "^0.6.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Mysql\\Triggers\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin for MySQL-specific trigger (re)creation",
-            "time": "2017-04-16 07:15:16"
-        },
-        {
-            "name": "dbmover/procedures",
-            "version": "0.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/procedures.git",
-                "reference": "c6e84c17b1a7fafc5f7083bdb35fcbee36f2deb5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/procedures/zipball/c6e84c17b1a7fafc5f7083bdb35fcbee36f2deb5",
-                "reference": "c6e84c17b1a7fafc5f7083bdb35fcbee36f2deb5",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/core": "^0.6.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Procedures\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin to (re)create procedures",
-            "time": "2017-04-16 06:36:30"
-        },
-        {
-            "name": "dbmover/tables",
-            "version": "0.6.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/tables.git",
-                "reference": "dce8903bef9465ef3e5d9a724b958c4eb376ccb7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/tables/zipball/dce8903bef9465ef3e5d9a724b958c4eb376ccb7",
-                "reference": "dce8903bef9465ef3e5d9a724b958c4eb376ccb7",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/core": "^0.6.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Tables\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin to migrate table definitions",
-            "time": "2017-04-17 06:39:01"
-        },
-        {
-            "name": "dbmover/views",
-            "version": "0.6.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbmover/views.git",
-                "reference": "80c0d3ceb50e5b8996245145f2a6176c17a4a672"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/views/zipball/80c0d3ceb50e5b8996245145f2a6176c17a4a672",
-                "reference": "80c0d3ceb50e5b8996245145f2a6176c17a4a672",
-                "shasum": ""
-            },
-            "require": {
-                "dbmover/core": "^0.6.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbmover\\Views\\": "./src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marijn Ophorst",
-                    "email": "marijn@monomelodies.nl"
-                }
-            ],
-            "description": "Dbmover plugin to (re)create all views",
-            "time": "2017-04-15 15:50:23"
+            "time": "2018-03-25 15:26:46"
         },
         {
             "name": "monomelodies/kingconf",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/monomelodies/kingconf.git",
-                "reference": "350bf4e1f8163b5843f9dec82bd6230968166015"
+                "reference": "ddf504a7f5fa50adeb68eb7627a76fbbdd5b8b3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/monomelodies/kingconf/zipball/350bf4e1f8163b5843f9dec82bd6230968166015",
-                "reference": "350bf4e1f8163b5843f9dec82bd6230968166015",
+                "url": "https://api.github.com/repos/monomelodies/kingconf/zipball/ddf504a7f5fa50adeb68eb7627a76fbbdd5b8b3a",
+                "reference": "ddf504a7f5fa50adeb68eb7627a76fbbdd5b8b3a",
                 "shasum": ""
             },
             "require": {
@@ -457,27 +100,30 @@
                 "xml",
                 "yaml"
             ],
-            "time": "2016-07-15 06:21:55"
+            "time": "2018-02-01 18:46:24"
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.2.7",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621"
+                "reference": "de5f125ea39de846b90b313b2cfb031a0152d223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/62b4cdb99d52cb1ff253c465eb1532a80cebb621",
-                "reference": "62b4cdb99d52cb1ff253c465eb1532a80cebb621",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/de5f125ea39de846b90b313b2cfb031a0152d223",
+                "reference": "de5f125ea39de846b90b313b2cfb031a0152d223",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "^7.1.3"
+            },
+            "conflict": {
+                "symfony/console": "<3.4"
             },
             "require-dev": {
-                "symfony/console": "~2.8|~3.0"
+                "symfony/console": "~3.4|~4.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -485,7 +131,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -512,7 +158,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20 09:45:15"
+            "time": "2018-02-19 20:08:53"
         }
     ],
     "packages-dev": [
