@@ -1,1 +1,14 @@
-site_name: dbmover/mysql
+site_name: DbMover/MySQL
+site_url: http://dbmover.monomelodies.nl/mysql/docs/
+repo_url: https://github.com/dbmover/mysql
+
+pages:
+- Home:
+    - 'General documentation': 'index.md'
+- Plugins:
+    - 'Conditionals': 'conditionals.md'
+    - 'Constraints': 'constraints.md'
+    - 'Indexes': 'indexes.md'
+    - 'Procedures': 'procedures.md'
+    - 'Tables': 'tables.md'
+    - 'Triggers': 'triggers.md'
