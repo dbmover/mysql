@@ -1,15 +1,5 @@
-# Dbmover\MysqlProcedures
+# Procedures
 MySQL-specific plugin for (re)creating procedures.
-
-## Installation
-```sh
-composer require dbmover/mysql-procedures
-```
-
-    This plugin is part of the `dbmover/mysql` meta-package.
-
-## Usage
-See `dbmover/core`.
 
 ## Caveats
 You might have included delimiters in your schema, so you can easily copy/paste
@@ -24,7 +14,4 @@ BEGIN
     -- SQL...
 END;
 ```
-
-## Contributing
-See `dbmover/core`.
 
