@@ -8,13 +8,12 @@ MySQL vendor-specific metapackage for DbMover
 $ composer require dbmover/mysql
 ```
 
-No, seriously: use Composer. As of version 0.6 DbMover uses a plugin-based
-architecture where each operation is in its own package. Maintaining all these
-dependencies manually is tedious and a _lot_ of work.
-
 ## Setup and running
-See [the Dbmover README](http://dbmover.monomelodies.nl/docs/) for instructions
-on setting up and running DbMover.
+See [the Dbmover README](http://dbmover.monomelodies.nl/core/docs/) for
+instructions on setting up and running DbMover.
+
+For quick start, you can simply add the `Dbmover\Mysql\Plugin` meta package
+to your `dbmover.json` config.
 
 ## MySQL specific notes
 The MySQL plugins fully support the use of escaped object names (e.g.
