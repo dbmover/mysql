@@ -10,13 +10,7 @@
         }
     ],
     "require": {
-        "dbmover/core": "^0.6.0",
-        "dbmover/views": "^0.6.0",
-        "dbmover/mysql-constraints": "^0.1.0",
-        "dbmover/mysql-procedures": "^0.6.0",
-        "dbmover/mysql-indexes": "^0.6.0",
-        "dbmover/mysql-tables": "^0.2.0",
-        "dbmover/mysql-triggers": "^0.6.0"
+        "dbmover/core": "^0.9.0"
     },
     "require-dev": {
         "gentry/gentry": "^0.10.2"
