@@ -1,4 +1,11 @@
 {
-    "src": "./src",
-    "tests": "./tests"
+    "src": "src",
+    "test": "vendor/bin/toast",
+    "templates": [
+        {
+            "path": "vendor/gentry/toast",
+            "output": "tests"
+        }
+    ],
+    "ignore": ["src/mocks.php", "src/dependencies.php"]
 }
