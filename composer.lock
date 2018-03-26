@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "dbmover/core",
-            "version": "0.9.1",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbmover/core.git",
-                "reference": "681d0231a2c7d432382fd56734895830ec360b40"
+                "reference": "f0e8a11159ac7808cf3817ac120421b29292638b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbmover/core/zipball/681d0231a2c7d432382fd56734895830ec360b40",
-                "reference": "681d0231a2c7d432382fd56734895830ec360b40",
+                "url": "https://api.github.com/repos/dbmover/core/zipball/f0e8a11159ac7808cf3817ac120421b29292638b",
+                "reference": "f0e8a11159ac7808cf3817ac120421b29292638b",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 }
             ],
             "description": "PHP-based database versioning tool, core components",
-            "time": "2018-03-25 16:00:49"
+            "time": "2018-03-26 07:53:27"
         },
         {
             "name": "monomelodies/kingconf",
