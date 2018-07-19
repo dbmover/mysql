@@ -20,9 +20,9 @@ class Plugin extends Core\Plugin
         $loader->loadPlugins(
             Procedures::class,
             Core\Views::class,
-            IndexesAndConstraints\Plugin::class,
-            Triggers\Plugin::class,
-            Tables\Plugin::class
+            IndexesAndConstraints::class,
+            Triggers::class,
+            Tables::class
         );
     }
 }
