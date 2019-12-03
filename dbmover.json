@@ -2,6 +2,7 @@
     "mysql:dbname=dbmover_test": {
         "user": "dbmover_test",
         "pass": "moveit",
-        "schema": ["tests/schema.sql"]
+        "schema": ["tests/schema.sql"],
+        "plugins": ["Dbmover\\Core\\ExplicitDrop", "Dbmover\\Core\\ForceNamedIndexes", "Dbmover\\Mysql\\Plugin", "Dbmover\\Core\\Data"]
     }
 }
