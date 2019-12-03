@@ -21,10 +21,5 @@
         "psr-4": {
             "Dbmover\\Mysql\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Dbmover\\Mysql\\Test\\": "tests"
-        }
     }
 }
