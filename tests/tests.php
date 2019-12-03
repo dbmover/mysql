@@ -59,7 +59,7 @@ EOT
         $stmt->execute();
         $all = $stmt->fetchAll();
         assert(count($all) === 1);
-        assert($all[0]['bar'] === 3);
+        assert($all[0]['bar'] == 3);
     };
 };
 
