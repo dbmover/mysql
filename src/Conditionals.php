@@ -22,7 +22,6 @@ class Conditionals extends Core\Conditionals
 DROP PROCEDURE IF EXISTS $tmp;
 CREATE PROCEDURE $tmp()
 BEGIN
-    SET DBMOVER_DATABASE = '$database';
     $sql
 END;
 CALL $tmp();
