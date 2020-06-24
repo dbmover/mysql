@@ -37,7 +37,24 @@ class Tables extends Core\Tables
      */
     public function __invoke(string $sql) : string
     {
-        // Todo: support for switching storage engine (MyISAM, InnoDB etc)
+        $exists = $this->loader->getPdo()->prepare(
+            "SELECT * FROM INFORMATION_SCHEMA.TABLES
+                WHERE ((TABLE_CATALOG = ? AND TABLE_SCHEMA = 'public') OR TABLE_SCHEMA = ?)
+                AND TABLE_TYPE = 'BASE TABLE'
+                AND TABLE_NAME = ?");
+        preg_match_all("@^CREATE TABLE\s*([^\s]+)\s*\(.*?^\) ENGINE=(\w+) DEFAULT CHARSET=(\w+);$@ms", $sql, $matches, PREG_SET_ORDER);
+        foreach ($matches as $match) {
+            $exists->execute($match[1]);
+            if (false !== ($table = $exists->fetch(PDO::FETCH_ASSOC))) {
+                // The table exists:
+                if ($table['ENGINE'] != $match[2]) {
+                    $this->addOperation("ALTER TABLE `{$match[1]}` ENGINE = {$match[2]}");
+                }
+                if ($table['TABLE_COLLATION'] != $match[3]) {
+                    $this->addOperation("ALTER TABLE `{$match[1]}` COLLATE {$match[3]}");
+                }
+            }
+        }
         return parent::__invoke($sql);
     }
 
