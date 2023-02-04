@@ -98,14 +98,14 @@ class Tables extends Core\Tables
         }
         if (preg_match('@(ON UPDATE.*|AUTO_INCREMENT)@', $definition['_definition'], $match)) {
             $definition['extra'] = $match[1];
-            $definition['column_default'] = trim(str_replace($match[1], '', $definition['column_default']));
+            $definition['column_default'] = trim(str_replace($match[1], '', $definition['column_default'] ?? ''));
         } else {
             $definition['extra'] = '';
         }
         if (preg_match("@^'.*?'@", $definition['_default'] ?? '')
-            && preg_match("@'$@", $definition['column_default'])
+            && preg_match("@'$@", $definition['column_default'] ?? '')
         ) {
-            $definition['column_default'] = preg_replace("@'$@", '', $definition['column_default']);
+            $definition['column_default'] = preg_replace("@'$@", '', $definition['column_default'] ?? '');
         }
 
         switch ($definition['column_type']) {
