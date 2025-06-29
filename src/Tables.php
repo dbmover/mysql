@@ -44,7 +44,7 @@ class Tables extends Core\Tables
                 AND TABLE_NAME = ?");
         preg_match_all("@^CREATE TABLE\s*([^\s]+)\s*\(.*?^\) ENGINE=(\w+) DEFAULT CHARSET=(\w+);$@ms", $sql, $matches, PREG_SET_ORDER);
         foreach ($matches as $match) {
-            $exists->execute($match[1]);
+            $exists->execute([$this->loader->getDatabase(), $this->loader->getDatabase(), $match[1]]);
             if (false !== ($table = $exists->fetch(PDO::FETCH_ASSOC))) {
                 // The table exists:
                 if ($table['ENGINE'] != $match[2]) {
