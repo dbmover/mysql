@@ -73,10 +73,10 @@ class IndexesAndConstraints extends Core\IndexesAndConstraints
             $index[5] = preg_replace('@(?<!`)(\w+)(?!`)@', '`\\1`', $index[5]);
         }
         foreach ($this->deferredStatements as &$statement) {
-            if (preg_match('@CREATE INDEX (\w+) ON (.*?)@', $statement, $match)) {
-                if (strlen($match[1]) > 64) {
+            if (preg_match('@CREATE (UNIQUE )?INDEX (\w+) ON (.*?)@', $statement, $match)) {
+                if (strlen($match[2]) > 64) {
                     // Hard MySQL limit.
-                    $statement = str_replace($match[1], 'idx_'.md5($match[1]), $statement);
+                    $statement = str_replace($match[2], 'idx_'.md5($match[2]), $statement);
                 }
             }
         }
