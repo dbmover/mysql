@@ -72,6 +72,14 @@ class IndexesAndConstraints extends Core\IndexesAndConstraints
         foreach ($this->requestedIndexes as &$index) {
             $index[5] = preg_replace('@(?<!`)(\w+)(?!`)@', '`\\1`', $index[5]);
         }
+        foreach ($this->deferredStatements as &$statement) {
+            if (preg_match('@CREATE INDEX (\w+) ON (.*?)@', $statement, $match)) {
+                if (strlen($match[1]) > 64) {
+                    // Hard MySQL limit.
+                    $statement = str_replace($match[1], 'idx_'.md5($match[1]), $statement);
+                }
+            }
+        }
         return $sql;
     }
 
