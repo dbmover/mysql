@@ -44,7 +44,7 @@ class Tables extends Core\Tables
                 AND T.TABLE_TYPE = 'BASE TABLE'
                 AND T.TABLE_NAME = ?");
         preg_match_all(
-            "@^CREATE TABLE\s*([^\s]+)\s*\(.*?^\) ENGINE=(\w+) DEFAULT CHARSET=(\w+)\s+(COLLATE=(\w+))?;$@ms",
+            "@^CREATE TABLE\s*([^\s]+)\s*\(.*?^\) ENGINE=(\w+) DEFAULT CHARSET=(\w+)(\s+COLLATE=(\w+))?;$@ms",
             $sql,
             $matches,
             PREG_SET_ORDER
@@ -64,6 +64,20 @@ class Tables extends Core\Tables
                 }
             }
         }
+        $sql = preg_replace_callback(
+            '@^CREATE TABLE.*\((.*?)^\)@ms',
+            fn ($match) =>  preg_replace_callback(
+                "@^\s*([a-z][^\s]+)@m",
+                function ($match) {
+                    if (!preg_match("@^`.*?`$@", $match[1]) && $match[1] != 'PRIMARY') {
+                        $match[1] = "`{$match[1]}`";
+                    }
+                    return " {$match[1]} ";
+                },
+                $match[0]
+            ),
+            $sql
+        );
         return parent::__invoke($sql);
     }
 
@@ -149,7 +163,6 @@ class Tables extends Core\Tables
      * @param string $table
      * @param string $sql
      * @return void
-     */
     protected function checkTableStatus(string $table, string $sql) : void
     {
         $sql = preg_replace_callback(
@@ -164,5 +177,6 @@ class Tables extends Core\Tables
         );
         parent::checkTableStatus($table, $sql);
     }
+     */
 }
 
