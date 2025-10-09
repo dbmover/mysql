@@ -49,7 +49,7 @@ class IndexesAndConstraints extends Core\IndexesAndConstraints
         }
         // Rewrite indexes so all fields are force-quoted:
         $sql = preg_replace_callback(
-            "@^CREATE\s*(UNIQUE)?\s*INDEX.*?ON\s*[\S]+\s*\((.*?)\);$@m",
+            "@^CREATE\s*(UNIQUE|FULLTEXT)?\s*INDEX.*?ON\s*[\S]+\s*\((.*?)\);$@m",
             function ($match) {
                 return preg_replace(
                     "@\({$match[2]}\)@",
@@ -73,7 +73,7 @@ class IndexesAndConstraints extends Core\IndexesAndConstraints
             $index[5] = preg_replace('@(?<!`)(\w+)(?!`)@', '`\\1`', $index[5]);
         }
         foreach ($this->deferredStatements as &$statement) {
-            if (preg_match('@CREATE (UNIQUE )?INDEX (\w+) ON (.*?)@', $statement, $match)) {
+            if (preg_match('@CREATE (UNIQUE|FULLTEXT)?\s*INDEX (\w+) ON (.*?)@', $statement, $match)) {
                 if (strlen($match[2]) > 64) {
                     // Hard MySQL limit.
                     $statement = str_replace($match[2], 'idx_'.md5($match[2]), $statement);
